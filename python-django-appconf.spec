@@ -2,7 +2,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A helper class for handling configuration defaults of packaged apps gracefully
 
 License:        BSD
@@ -13,6 +13,11 @@ BuildArch:      noarch
 BuildRequires:  python2-devel
 BuildRequires:  python-sphinx
 
+%if 0%{?rhel}<7 || 0%{?fedora} < 18
+Requires:   Django
+%else
+Requires:   python-django
+%endif
 
 %description
 A helper class for handling configuration
@@ -45,5 +50,8 @@ rm -rf html/.{doctrees,buildinfo}
 %{python_sitelib}/django_appconf-%{version}-py?.?.egg-info
 
 %changelog
+* Wed Sep 26 2012 Matthias Runge <mrunge@redhat.com> - 0.5-2
+- also add requirement: Django/python-django
+
 * Tue Sep 11 2012 Matthias Runge <mrunge@redhat.com> - 0.5-1
 - Initial package.
