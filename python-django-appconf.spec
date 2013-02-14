@@ -2,7 +2,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.5
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A helper class for handling configuration defaults of packaged apps gracefully
 
 License:        BSD
@@ -50,6 +50,9 @@ rm -rf html/.{doctrees,buildinfo}
 %{python_sitelib}/django_appconf-%{version}-py?.?.egg-info
 
 %changelog
+* Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.5-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
 * Wed Sep 26 2012 Matthias Runge <mrunge@redhat.com> - 0.5-2
 - also add requirement: Django/python-django
 
