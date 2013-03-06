@@ -1,8 +1,8 @@
 %global pypi_name django-appconf
 
 Name:           python-%{pypi_name}
-Version:        0.5
-Release:        2%{?dist}
+Version:        0.6
+Release:        1%{?dist}
 Summary:        A helper class for handling configuration defaults of packaged apps gracefully
 
 License:        BSD
@@ -12,6 +12,7 @@ BuildArch:      noarch
  
 BuildRequires:  python2-devel
 BuildRequires:  python-sphinx
+BuildRequires:  python-django-discover-runner
 
 %if 0%{?rhel}<7 || 0%{?fedora} < 18
 Requires:   Django
@@ -43,6 +44,8 @@ rm -rf html/.{doctrees,buildinfo}
 %install
 %{__python} setup.py install --skip-build --root %{buildroot}
 
+%check
+%{__python} setup.py test
 
 %files
 %doc html README.rst LICENSE
@@ -50,6 +53,9 @@ rm -rf html/.{doctrees,buildinfo}
 %{python_sitelib}/django_appconf-%{version}-py?.?.egg-info
 
 %changelog
+* Wed Mar 06 2013 Matthias Runge <mrunge@redhat.com> - 0.6-1
+- update to appconf-0.6
+
 * Wed Sep 26 2012 Matthias Runge <mrunge@redhat.com> - 0.5-2
 - also add requirement: Django/python-django
 
