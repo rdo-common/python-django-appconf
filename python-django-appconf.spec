@@ -56,6 +56,9 @@ rm -rf html/.{doctrees,buildinfo}
 * Wed Mar 06 2013 Matthias Runge <mrunge@redhat.com> - 0.6-1
 - update to appconf-0.6
 
+* Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.5-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
 * Wed Sep 26 2012 Matthias Runge <mrunge@redhat.com> - 0.5-2
 - also add requirement: Django/python-django
 
