@@ -13,7 +13,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.0.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A helper class for handling configuration defaults of packaged apps gracefully
 
 License:        BSD
@@ -30,6 +30,8 @@ BuildRequires:  python-flake8
 BuildRequires:  python-coverage
 BuildRequires:  python-django
 
+Requires:       python-django
+
 %description
 A helper class for handling configuration
 defaults of packaged Django
@@ -43,7 +45,7 @@ BuildRequires:  python3-devel
 BuildRequires:  python-sphinx
 BuildRequires:  python3-setuptools
 
-Requires:   python-django
+Requires:   python3-django
 
 %description -n python3-%{pypi_name}
 A helper class for handling configuration
@@ -123,9 +125,10 @@ popd
 %endif
 
 %changelog
-* Thu Aug 27 2015 Matthias Runge <mrunge@redhat.com> - 1.0.1-1
+* Thu Aug 27 2015 Matthias Runge <mrunge@redhat.com> - 1.0.1-2
 - update to 1.0.1
 - python3 subpackage
+- fix requirements py/py3
 
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.6-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
