@@ -13,7 +13,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.0.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A helper class for handling configuration defaults of packaged apps gracefully
 
 License:        BSD
@@ -125,6 +125,9 @@ popd
 %endif
 
 %changelog
+* Tue Nov 10 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.1-3
+- Rebuilt for https://fedoraproject.org/wiki/Changes/python3.5
+
 * Thu Aug 27 2015 Matthias Runge <mrunge@redhat.com> - 1.0.1-2
 - update to 1.0.1
 - python3 subpackage
